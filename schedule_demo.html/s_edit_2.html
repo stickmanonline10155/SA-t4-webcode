@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/937e93c93c.js" crossorigin="anonymous"></script>
+    <title>課表編輯</title>
+</head>
+<body style="background-color: #ffffff;">
+    <!--導覽列-->
+    <div class="note-nav">
+
+        <div class="last-page-button">
+            <a href="./schedule.html"><i class="fa-solid fa-chevron-left fa-lg" style="color: #ffffff;"></i></a>
+        </div>
+
+        <h5 style="color: #ffffff; margin: 0 auto;">新增課程</h5>
+        <div style="margin: 20px;">
+            <form class="check-button" align="right" style="height: 30px;">
+                <input type="submit" value="儲存">
+            </form>
+        </div>
+        
+    </div>
+
+    <!--編輯課程-->
+        <div class="wrapper">
+            <div id="schedule-edit">
+                <input class="form-control" type="text" placeholder="輸入課程" aria-label="Disabled input example" style="width:1000px; background-color: rgb(230, 230, 230);">
+            </div>
+
+            <div id="schedule-dec" style="background-color:  rgb(230, 230, 230);">
+                <h5>星期</h5>
+                <select class="form-control" aria-label="Default select example" style="width:800px;background-color: rgb(255, 255, 255);">
+                    <option selected>選擇星期</option>
+                    <option value="1">一</option>
+                    <option value="2">二</option>
+                    <option value="3">三</option>
+                    <option value="4">四</option>
+                    <option value="5">五</option>
+                  </select>
+                  <br>
+                  <h5>開始節次</h5>
+                  <select class="form-control" aria-label="Default select example" style="width:800px;background-color: rgb(255, 255, 255);">
+                      <option selected>選擇節次</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="N">N</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      
+                    </select>
+                    <br>
+                    <h5>結束節次</h5>
+                    <select class="form-control" aria-label="Default select example" style="width:800px;background-color: rgb(255, 255, 255);">
+                      <option selected>選擇節次</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="N">N</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      
+                    </select>
+                    <br>
+                    <h5>顏色</h5>
+                    <input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color" style="width:50px">
+
+                    
+            </div>
+
+            <div id="input-class">
+                <div class="mb-3">
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="附註" style="width:1000px; background-color: rgb(230, 230, 230);"></textarea>
+                  </div>
+            </div>
+       </div>
+
+    </body>
+    
+
+
+
+</html>
