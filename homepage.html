@@ -12,16 +12,20 @@
 <body>
 <section class="header">
     <section class="float-button">
-        <div class="fab-container">
-            <div class="iconbutton">
+        <a href="sticker.html"><button class="sticker-container">
+            <div class="stickerbutton">
                 <p><i class="fa-solid fa-plus"></i>&nbsp;便利貼 📝</p>
                 <!-- <i class="fa-regular fa-note-sticky"></i> -->
             </div>
-        </div>
-        <div class="tomato-container">
+        </button></a>
+
+        <div>
+        
+        <a href="#"><button class="tomato-container">
             <div class="tomatobutton">
                 <p> 蕃茄鐘 🍅&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></p>
             </div>
+        </button></a>
         </div>
     </section>
 
@@ -45,7 +49,10 @@
             <li><a href="sticker.html">便利貼</a></li>
             <li><a href="#"><i class="fa-solid fa-calendar-lines"></i>行事曆</a></li>
             <li><a href="#">記帳</a></li>
-            <li><a href="schedule-file.html">課表</a></li>
+            <li><a href="schedule-file.html">課表</a></li>           
+            <li class="setting"><a href="#"><i class="fa-solid fa-gear"></i>&nbsp;&nbsp; 設定</a></li>
+            <li class="signup"><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp; 登入 / 註冊</a></li>   
+            <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; 登出</a></li>              
         </ul>
         </div>
         <div class="dark-mode">
@@ -55,18 +62,21 @@
     </div>
     <a href="javascript:void(0)"><i class="fa-solid fa-bars" onclick="showMenu()"></i></a>
 </nav>
-
 <!-- End of sidebar -->
 
 <!-- Start of function boxes -->
-<div class="main">
+<section class="main">
     <div class="welcome-phrase">
         <h2 class="welcome-user">Welcome User</h2>
         <h5>Wednesday, April 19th, 2023</h5>
     </div>
 <div class="container-wrapper">
-    <h2>功能  <i class="fa-solid fa-bolt"></i></h2>
+    <!-- <h2>功能  <i class="fa-solid fa-bolt"></i></h2> -->
 <div class="container">
+    <h2>功能  <i class="fa-solid fa-bolt"></i></h2>
+    <div class="arrow-wrapper">
+        <div class="arrow"></div>
+    </div>
     <ul class="boxes">
         <li class="box">
             <div>
@@ -76,7 +86,7 @@
                 </div>
             </div>
             <div class="box-link-wrapper">
-                <a href="#" class="box-link" type="onclick">進入功能</a>
+                <a href="note-file.html" class="box-link" type="onclick">進入功能</a>
             </div>
         </li>
         <li class="box">
@@ -109,7 +119,7 @@
                 </div>
             </div>
             <div class="box-link-wrapper">
-                <a href="#" class="box-link">進入功能</a>
+                <a href="schedule-file.html" class="box-link">進入功能</a>
             </div>
         </li>
         <li class="box">
@@ -135,16 +145,14 @@
             </div>
         </li>
     </ul>
-</div>
     <div class="arrow-wrapper">
         <div class="arrow"></div>
     </div>
 </div>
-
 </div>
 
-
 </section>
+<!-- End of function boxes -->
 
 
 
