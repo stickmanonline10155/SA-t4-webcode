@@ -301,7 +301,8 @@ body {
     padding-bottom: 0px;
     margin: 0 auto; */
     /*  */
-     max-width: 1550px; 
+    /* max-width: 1550px;  */
+    width: 80%;
     /*  */
     padding: 15px 15px 12px 40px;
     /* margin: 0 auto; */
@@ -342,6 +343,13 @@ body {
     list-style: none;
     overflow-x: scroll;
     scroll-snap-type: x mandatory; */
+}
+
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
 }
 
 .box{
@@ -450,13 +458,8 @@ body {
     margin-right: 40px;
 }
 }
-.boxes{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
+
+
 
 
 /*登入*/
