@@ -63,7 +63,7 @@
         <input type=text name="user_name" class="form-control" required placeholder="請輸入名字"/>
         <br>
         <i class="fa-solid fa-envelope fa-lg"></i>
-        <input type=text name="account" class="form-control" required placeholder="請輸入帳號" />
+        <input type=email name="account" class="form-control" required placeholder="請輸入帳號" />
         
         <br>
         
