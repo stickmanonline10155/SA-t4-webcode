@@ -1,0 +1,143 @@
+/*
+頂端有一個深藍色長方形方塊，左邊有漢堡選單符號，中央有便利貼
+網頁中間有兩個便利貼
+網頁右下角顯示一個+的符號*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+/* header {
+	background-color: #313155;
+	height: 70px;
+    position:relative; top:-116px;
+} */
+
+/* .header-container { */
+	/* max-width: 1400px; */
+	/* margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%; */
+/* } */
+
+
+.burger{
+    position: relative;
+    left: 1%;
+    color: #fff;
+    font-size: 180%;
+}
+
+
+.logo {
+	color: #fff;
+	font-size: 28px;
+    position: relative; right: 665%;
+    align-items: center;
+}
+
+main {
+	/* overflow: hidden; */
+	max-width: 800px;
+	margin: 20px auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 20px;
+}
+
+/*便利貼形狀*/
+.square {
+	background-color: #ffd300;
+	height: 370%;
+    width: 90%;
+    position:relative; top: 30%; left:15%;
+}
+
+.square:before {
+	content: '';
+	display: block;
+	padding-top:25%;
+}
+/*便利貼字體位置*/
+.square-content {
+    width: 100%;
+	height:100%;
+	align-items: center;
+    position: absolute;top: 1px;
+    left:5px;
+}
+
+
+.yellow {
+	background-color: #ffd300;
+}
+
+/*便利貼字體大小*/
+.square p {
+	font-size: 20px;
+	font-weight: bold;
+	color: #fff;
+}
+
+/*  */
+/*跳出對話筐、➕*/
+body {
+    background-color: rgb(255, 251, 251);
+    width: 100%;
+    }
+    
+    a {
+    text-decoration: none;
+    font-size: 75px;
+    color: rgb(1, 1, 1);
+    
+    position: fixed;
+    bottom: 37px;
+    right:7%;
+}
+    
+    .modal-header h3 {
+    font-size: 140%;
+    color: rgb(1, 1, 1);
+    }
+    
+    .modal-content {
+    background-color: rgb(209, 206, 206);
+    }
+    
+
+    
+    .remember {
+    margin-bottom: 20%;
+    }
+    
+    .modal-body form .btn {
+    width: 10%;
+    font-size: 10%;
+    color: white;
+    position: relative; left:410%;
+    }
+    .sticker-nav{
+    margin-top: 0;
+    width: 100%;
+    background-color: #4c576d;
+    display: flex;
+    align-items: center;
+    }
+
+    .sticker-file-nav-title{
+        color:#fff;
+        margin:0 auto;
+    }
+    
+.btn btn-info{
+    font-size: 10%;
+    position: relative;
+    left: -20%;
+}
