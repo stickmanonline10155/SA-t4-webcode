@@ -33,7 +33,7 @@
         </div>
     </div>
     <!--筆記編輯-->
-    <form>
+    <form method="post">
       <textarea id="basic-example">
         
       </textarea>
