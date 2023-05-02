@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>筆記系統</title>
+<!--匯入CSS-->
+    <link rel="stylesheet" href="sticker.css">
+<!--匯入Boostrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+<!--可新增選項的下拉式選單-->
+<script>
+    function addOption() {
+        var input = document.getElementById("newOption");
+        var select = document.getElementById("selectOption");
+        var option = document.createElement("option");
+        option.text = input.value;
+        select.add(option);
+        input.value = "";
+    }
+</script>
+</head>
+<body>
+<!-- 新增按鈕 -->
+<a href="#" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">＋</a>
+<!-- 跳出視窗內容 -->
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Header -->
+        <div class="modal-header">
+            <h3>新增便利貼：</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <!-- Body -->
+    <div class="modal-body">
+        <!-- 輸入便利貼內容 -->
+        <div class="form-group" align="center">
+            <textarea name="noteedit" rows="11" cols="80" required style="width: 300px;"></textarea>
+        </div>
+        <br>
+        <!--新增內的分類-->
+        <label for="selectOption">分類:</label>
+        <select id="selectOption">
+            <option value="option1">學業</option>
+            <option value="option2">家庭</option>
+            <option value="option3">娛樂</option>
+        </select>
+        <br><br>
+        <label for="newOption">新增分類：</label>
+        <input type="text" id="newOption">
+        <button onclick="addOption()">新增</button>
+        <br><br>
+        <!-- 送出按鈕 -->
+        <button type="button" class="btn btn-info"> ✓ </button>
+    </div>
+    </div>
+    </div>
+</div>
+<!--便利貼頁面-->
+<div class="sticker-nav">
+    <div class="burger">
+        <label for="burger">☰</label>
+    </div>
+    <div class="sticker-file-nav-title" >
+        <h5 style="justify-content: center;">便利貼</h5>
+    </div>
+</div>
+<!--分類-->
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">全部</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">學業</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">家庭</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">娛樂</button>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><div class="wrapper">
+        <div class="color-lump1">
+            <div class= "lump.content1">
+                <p>2023/05/02（二）</p>
+                <p>學業內容</p>
+            </div>
+        </div>
+        <div class="color-lump2">
+            <div class= "lump.content2">
+                <p>2023/05/02（二）</p>
+                <p>家庭內容</p>
+            </div>
+        </div>
+        <div class="color-lump3">
+            <div class= "lump.content3">
+                <p>2023/05/02（二）</p>
+                <p>娛樂內容</p>
+            </div>
+        </div>
+      </div></div>
+    <div class="tab-pane" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+        <div class="color-lump1">
+            <div class= "lump.content1">
+                <p>2023/05/02（二）</p>
+                <p>學業內容</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="tab-pane" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab"
+        <div class="wrapper">
+        <div class="color-lump2">
+            <div class= "lump.content2">
+                <p>2023/05/02（二）</p>
+                <p>家庭內容</p>
+            </div>
+        </div>
+      </div>
+    
+      <div class="tab-pane" id="nav-contact2" role="tabpanel" aria-labelledby="nav-contact-tab"
+        <div class="wrapper">
+        <div class="color-lump3">
+            <div class= "lump.content3">
+                <p>2023/05/02（二）</p>
+                <p>娛樂內容</p>
+            </div>
+        </div>
+      </div></div>
+  </div>
+</body>
+</html>

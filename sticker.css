@@ -156,19 +156,41 @@ body {
         top: -20%;
     height: 40%;
     }
-/*新便利貼*/
-    .wrapper {
-        display: grid;
-        grid-template-columns: 100px 100px 100px;
-        grid-gap: 10%;
-        background-color: #fff;
-        color: #f8e772;
-      }
-      
-      .box {
-        background-color: #f8e772;
-        color: #fff;
-        border-radius: 5px;
-        padding: 20px;
-        font-size: 300%;
-      }
+
+/*新便利貼*/      
+.color-lump1{
+    width:20%;
+    height: 270px;
+    background-color: #fade25;
+    position: relative;
+    left: 20%;
+    top: 80px;
+}
+
+.color-lump2{
+    width:20%;
+    height: 270px;
+    background-color: #4ac5fa;
+    position: relative;
+    left: 20%;
+    top: 80px;
+}
+
+.color-lump3{
+    width:20%;
+    height: 270px;
+    background-color: #fc4ec2;
+    position: relative;
+    left: 20%;
+    top: 80px;
+}
+
+.lump.content1{
+    color: rgb(0, 0, 0);
+}
+.lump.content2{
+    color: rgb(0, 0, 0);
+}
+.lump.content3{
+    color: rgb(0, 0, 0);
+}
