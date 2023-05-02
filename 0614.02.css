@@ -1,0 +1,60 @@
+/*跳出對話筐、➕*/
+body {
+    background-color: rgb(255, 251, 251);
+    width: 100%;
+    }
+    
+    a {
+    text-decoration: none;
+    font-size: 75px;
+    color: rgb(1, 1, 1);
+    
+    position: fixed;
+    bottom: 30px;
+    right:30px;
+}
+    
+    .modal-header h3 {
+    font-size: 30px;
+    color: rgb(1, 1, 1);
+    }
+    
+    .modal-content {
+    background-color: rgb(209, 206, 206);
+    }
+    
+
+    
+    .remember {
+    margin-bottom: 20px;
+    }
+    
+    .modal-body form .btn {
+    width: 10%;
+    font-size: 10px;
+    color: white;
+    position: relative; left:410px;
+    }
+    .sticker-nav{
+    margin-top: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #da144f;
+    display: flex;
+    align-items: center;
+    }
+
+    .sticker-file-nav-title{
+        color:#fff;
+        margin:0 auto;
+    }
+    
+    .btn btn-info{
+        font-size: 10%;
+        position: relative;
+        left: -20%;
+        background-color: #4c576d;
+    }
+
+    /*新增＿分類*/
+    
