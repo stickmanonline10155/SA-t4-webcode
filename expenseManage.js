@@ -124,13 +124,6 @@ Init();
 form.addEventListener('submit', addTransaction);
 
 
-// SHOWING THE CURRENT DATE
-var object = { 0: '星期天', 1: "星期一", 2: "星期二", 3: "星期三", 4: "星期四", 5: "星期五", 6: "星期六", }
-date = new Date();
-year = date.getFullYear();
-month = date.getMonth() + 1;
-day = date.getDate();
-document.getElementById("current_date").innerHTML = year + "/" + month + "/" + day + ' ' + object[day];
 
 
 // CALENDAR NUMBER

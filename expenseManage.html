@@ -188,7 +188,7 @@
         <div class="clearfix">
             <div class="card" style="width: 50rem; margin-left: 20px; margin-top: 0;">
                 <div class="card-header">
-                    <p id="current_date" class="float-start"></p>
+                    <p id="currentnow_date" class="float-start"></p>
                     <p class="float-end total-amount">$0.00</p>
                 </div>
                 <ul class="list-group list-group-flush">
@@ -217,9 +217,18 @@
 
 
 <!---------JAVASCRIPT CODE--------------->
-<script src="expenseManage.js"></script>
+<!-- <script src="expenseManage.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
+// SHOWING THE CURRENT DATE
+var object = { 0: '星期天', 1: "星期一", 2: "星期二", 3: "星期三", 4: "星期四", 5: "星期五", 6: "星期六", }
+today = new Date();
+now_year = today.getFullYear();
+now_month = today.getMonth() + 1;
+now_day = today.getDate();
+document.getElementById("currentnow_date").innerHTML = now_year + "/" + now_month + "/" + now_day + ' ' + object[now_day];
+
+// calendar number
 const yearValue = document.querySelector('.year .value');
 const monthValue = document.querySelector('.month .value');
 const dateValue = document.querySelector('.date .value');
