@@ -647,3 +647,63 @@ body {
     justify-content: center;
 }
 
+
+/*以下為課表*/
+
+.cs_table{
+    /* margin-left: 180px; */
+    /* border-spacing:20px; */
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: center;
+    width:1000px;
+    margin:0 auto 30px auto;
+    margin-top: 10px;
+    height:600px;
+    padding: 5px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 10px;
+    
+}
+
+.cs_table td,.cs_table th{
+    width: 20%;
+    height:40px;   
+    border-radius: 10px;
+    font-size: 18px;
+    vertical-align: middle;
+    padding:5px;
+
+}
+
+.cs_form{
+    justify-content: center;
+    margin-top:150px;
+    background-color: #d9dadb;
+    padding:  20px 50px 20px 50px;
+    width:900px;
+    margin-left:auto;
+    margin-right:auto;
+    border-radius: 10px;
+    margin-bottom: 150px;
+
+}
+
+.add_class{
+    position:absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+.add_class a{
+    display: block;
+    color:#333;
+    font-weight:bolder;
+    font-size:20px;
+    background-color: rgb(230, 230, 230);
+    border:1px solid #ccc;
+    padding:5px 13px;
+    border-radius:100%;}
+
+/*以上為課表*/
