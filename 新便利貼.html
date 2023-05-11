@@ -25,10 +25,16 @@
         input.value = "";
     }
 </script>
+<script src="https://kit.fontawesome.com/2be1d00d34.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- 新增按鈕 -->
-<a href="#" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">＋</a>
+<!--<a href="#" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">＋</a>-->
+<div class="fixed-addbtn">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-whatever="@金額">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+</div>
 <!-- 跳出視窗內容 -->
 <div class="modal fade" id="loginModal">
     <div class="modal-dialog">
@@ -57,6 +63,8 @@
         <input type="text" id="newOption">
         <button onclick="addOption()">新增</button>
         <br><br>
+        <!--提醒事項-->
+        <p>提醒事項：&emsp;<label><input type="checkbox" name="lang1" value="" checked></label></p>
         <!-- 送出按鈕 -->
         <button type="button" class="btn btn-info"> ✓ </button>
     </div>
@@ -86,19 +94,27 @@
         <div class="color-lump1" style="margin-right: 15px;display: inline-block;">
             <div class= "lump.content1">
                 <p>2023/05/02（二）</p>
-                <p>學業內容</p>
+                <p>經濟學複習</p>
+                <p>統計學複習</p>
+                <p>通識作業</p>
+                <p>外文報告</p>
             </div>
         </div>
         <div class="color-lump2" style="margin-right: 15px;display: inline-block;">
             <div class= "lump.content2">
                 <p>2023/05/02（二）</p>
-                <p>家庭內容</p>
+                <label><input type="checkbox" name="lang1" value="買洗碗精" checked>買洗碗精</label><br><br>
+                <label><input type="checkbox" name="lang1" value="換燈泡" checked>換燈泡</label><br><br>
+                <label><input type="checkbox" name="lang1" value="澆花" checked>澆花</label><br><br>
             </div>
         </div>
         <div class="color-lump3 "style="margin-right: 15px;display: inline-block;">
             <div class= "lump.content3">
                 <p>2023/05/02（二）</p>
-                <p>娛樂內容</p>
+                <p>訂生日蛋糕</p>
+                <p>寫卡片</p>
+                <p>吃新口味冰淇淋</p>
+                <p>看電影</p>
             </div>
         </div>
       </div></div>
@@ -106,7 +122,10 @@
         <div class="color-lump1">
             <div class= "lump.content1">
                 <p>2023/05/02（二）</p>
-                <p>學業內容</p>
+                <p>經濟學複習</p>
+                <p>統計學複習</p>
+                <p>通識作業</p>
+                <p>外文報告</p>
             </div>
         </div>
 
@@ -116,7 +135,9 @@
         <div class="color-lump2">
             <div class= "lump.content2">
                 <p>2023/05/02（二）</p>
-                <p>家庭內容</p>
+                <label><input type="checkbox" name="lang1" value="買洗碗精" checked>買洗碗精</label><br><br>
+                <label><input type="checkbox" name="lang1" value="換燈泡" checked>換燈泡</label><br><br>
+                <label><input type="checkbox" name="lang1" value="澆花" checked>澆花</label><br><br>
             </div>
         </div>
       </div>
@@ -126,7 +147,10 @@
         <div class="color-lump3">
             <div class= "lump.content3">
                 <p>2023/05/02（二）</p>
-                <p>娛樂內容</p>
+                <p>訂生日蛋糕</p>
+                <p>寫卡片</p>
+                <p>吃新口味冰淇淋</p>
+                <p>看電影</p>
             </div>
         </div>
       </div></div>
