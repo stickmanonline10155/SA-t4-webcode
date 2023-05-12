@@ -82,13 +82,54 @@
 </div>
 <!--分類-->
 <nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+  <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+    <li class="nav-item" role="presentation">
       <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">全部</button>
+    </li>
+    <li class="nav-item" role="presentation">
       <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">學業</button>
+    </li>
+    <li class="nav-item" role="presentation">
       <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">家庭</button>
+    </li>
+    <li class="nav-item" role="presentation">
       <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact2" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">娛樂</button>
-    </div>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="add-tab" type="button">+</button>
+    </li>
+  </ul>
   </nav>
+<!--新增分類按鈕js-->
+<script>
+    //在網頁找到'id=add-tab'，並儲存到'addButton'變數
+    const addButton = document.getElementById('add-tab');
+
+    //在網頁找到'id=mytab'，並儲存到'navList'變數
+    const navList = document.getElementById('myTab');
+
+    //在'addButton'上註冊一個點擊事件的監聽器
+    addButton.addEventListener('click', () => {
+
+    //建立一個新的'li'元素，並儲存到'newTab'變數
+    const newTab = document.createElement('li');
+
+    //將'newTab'元素的'class'屬性設為'nav-item'，讓其看起來像選項卡
+    newTab.classList.add('nav-item');
+
+    //呼叫prompt函式，顯示對話框，要求使用者輸入新檔案夾名稱，並將其輸入值儲存到'userInput‘變數中
+    const userInput = prompt('請輸入新檔案夾名稱');
+
+    //將'newTab'元素的'innerHTML'屬性設為html字符串，其中包括一個'button'元素，其文字內容是使用者輸入的值，其他屬性則是用來設置樣式和行為
+    newTab.innerHTML = `
+    <button class="nav-link" id="new-tab" data-bs-toggle="tab" data-bs-target="#new" type="button" role="tab" aria-controls="new" aria-selected="false">${userInput}</button>
+    `;
+
+    //將'newTab'插入到'navList'中，插入位置是在'addButton‘之前的位置，可以讓新建的標籤顯示在選項卡列表中
+    navList.insertBefore(newTab, addButton.parentNode);
+});
+
+  </script>
   <div class="tab-content" id="nav-tabContent">
     <div class="tab-pane show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><div class="wrapper">
         <div class="color-lump1" style="margin-right: 15px;display: inline-block;">
