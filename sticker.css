@@ -28,18 +28,15 @@ body {
 
 
 .burger{
-    position: relative;
-    left: 1%;
-    color: #fff;
-    font-size: 180%;
+    color:#fff;
+    font-size: 30px;
 }
 
 
-.logo {
-	color: #fff;
-	font-size: 28px;
-    position: relative; right: 665%;
-    align-items: center;
+.sticker-file-nav-title{
+    color:#fff;
+    margin:0 auto;
+    font-size: 25px;
 }
 
 main {
@@ -88,7 +85,9 @@ main {
 	height:100%;
 	align-items: center;
     position: absolute;top: 1px;
-    left:5px;
+    left:15px;
+    padding-right: 15%;
+    padding-top: 10%;
 }
 
 
@@ -154,7 +153,7 @@ body {
     .nav nav-tabs{
         position: relative;
         top: -20%;
-    height: 40%;
+        height: 40%;
     }
 
 /*新便利貼*/      
@@ -194,3 +193,34 @@ body {
 .lump.content3{
     color: rgb(0, 0, 0);
 }
+/* --------------add button ------------------------*/
+.fixed-addbtn .btn-primary {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    cursor: pointer;
+    border: none;
+    background-color: #4c576d;
+    border-radius: 50%;
+
+    width: 40px;
+    height: 40px;
+}
+
+.fixed-addbtn .btn-primary:hover {
+    background-color: #a1b0cd;
+    color: #4c576d;
+    padding-bottom: .1rem;
+}
+
+.fixed-addbtn .btn-primary i {
+    font-size: 20px;
+    padding: 5px 3px;
+    padding-left: 0;
+    justify-content: center;
+}
+
+
+
+ 
+  
