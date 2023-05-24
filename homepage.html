@@ -4,177 +4,143 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首頁</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/notes.png" />
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="shortcut icon" href="../images/icons8-note-64.png" />
     <script src="https://kit.fontawesome.com/2be1d00d34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"> 
 </head>
 <body>
-<section class="header">
-    <section class="float-button">
-        <a href="sticker.html"><button class="sticker-container">
-            <div class="stickerbutton">
-                <p><i class="fa-solid fa-plus"></i>&nbsp;便利貼 📝</p>
-                <!-- <i class="fa-regular fa-note-sticky"></i> -->
-            </div>
-        </button></a>
-
-        <div>
-        
-        <a href="#"><button class="tomato-container">
-            <div class="tomatobutton">
-                <p> 蕃茄鐘 🍅&nbsp;&nbsp;<i class="fa-solid fa-chevron-down"></i></p>
-            </div>
-        </button></a>
+<!-- START OF Header -->
+<header class="headbar">
+    <a href="#" class="main-link">
+        <img src="../images/icons8-note-64.png" alt="">
+        <div class="mainlogo">t4 syst</div>
+    </a>
+    <div class="upright-func">
+        <div class="upright-func1">
+            <a href="#login">Login</a>
         </div>
-    </section>
+        <div class="upright-func2">
+            <a href="#sign up">Sign up</a>
+        </div>
+    </div>
+</header>
+<!-- END OF Header -->
 
-<!-- Start of sidebar -->
-<nav>
-    <div class="sidebar">
-        <a href="javascript:void(0)"><i class="fa-solid fa-xmark" onclick="hideMenu()"></i></a>
-        
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-        <!-- <i class="fa fa-times" onclick="hideMenu()"></i>--->
-        <div class="logo">
+<!-- START OF SIDEBAR -->
+<nav class="sidebar">
+    <ul>
+        <li><a href="homepage.html">
             <!-- <i class="fa-solid fa-bars"></i> -->
-            <a href="homepage.html"><h3 align = "center">LOGO</h3></a>
-        </div>
-        <div class="search-box">
-            <input type="text" class="search" placeholder="搜尋..." >
-        </div>
-        <div>
-        <ul id="homepage-menu">
-            <li><a href="note-file.html">筆記</a></li>
-            <li><a href="sticker.html">便利貼</a></li>
-            <li><a href="#"><i class="fa-solid fa-calendar-lines"></i>行事曆</a></li>
-            <li><a href="#">記帳</a></li>
-            <li><a href="schedule-file.html">課表</a></li>           
-            <li class="setting"><a href="#"><i class="fa-solid fa-gear"></i>&nbsp;&nbsp; 設定</a></li>
-            <li class="signup"><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp; 登入 / 註冊</a></li>   
-            <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; 登出</a></li>              
-        </ul>
-        </div>
-        <div class="dark-mode">
-            <span><i class="fa-solid fa-moon"></i></span>
-        </div>
+            <i class="fa-solid fa-house"></i>
+            <span class="nav-item">首頁</span>
+        </a></li>
+        <li><a href="../note-file.php">
+            <i class="fa-solid fa-book"></i>
+            <span class="nav-item">筆記</span>
+        </a></li>
+        <li><a href="../新便利貼.html">
+            <i class="fa-solid fa-note-sticky"></i>
+            <span class="nav-item">便利貼</span>
+        </a></li>
+        <li><a href="../schedule-file.html">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="nav-item">行事曆</span>
+        </a></li>
+        <li><a href="../expenseManage.html">
+            <i class="fa-solid fa-comments-dollar"></i>
+            <span class="nav-item">記帳</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-school"></i>
+            <span class="nav-item">課表</span>
+        </a></li>
+        <li><a href="../tomato.html">
+            <i class="fa-solid fa-clock"></i>
+            <span class="nav-item">番茄鐘</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="nav-item">登入</span>
+        </a></li>
+        <li><a href="#" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">登出</span>
+        </a></li>
         
-    </div>
-    <a href="javascript:void(0)"><i class="fa-solid fa-bars" onclick="showMenu()"></i></a>
-</nav>
-<!-- End of sidebar -->
-
-<!-- Start of function boxes -->
-<section class="main">
-    <div class="welcome-phrase">
-        <h2 class="welcome-user">Welcome User</h2>
-        <h5>Wednesday, April 19th, 2023</h5>
-    </div>
-
-<div class="container">
-    <h2>功能  <i class="fa-solid fa-bolt"></i></h2>
-    <ul class="boxes">
-        <li class="box">
-            <div>
-                <h3 class="box-title">筆記</h3>
-                <div class="box-content">
-                    <p>上課筆記...</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="note-file.html" class="box-link" type="onclick">進入功能</a>
-            </div>
-        </li>
-        <li class="box">
-            <div>
-                <h3 class="box-title">行事曆</h3>
-                <div class="box-content">
-                    <p>每日行程...</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="#" class="box-link">進入功能</a>
-            </div>
-        </li>
-        <li class="box">
-            <div>
-                <h3 class="box-title">記帳</h3>
-                <div class="box-content">
-                    <p>收入支出...</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="#" class="box-link">進入功能</a>
-            </div>
-        </li>
-        <li class="box">
-            <div>
-                <h3 class="box-title">課表</h3>
-                <div class="box-content">
-                    <p>翹課...</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="schedule-file.html" class="box-link">進入功能</a>
-            </div>
-        </li>
-        <li class="box">
-            <div>
-                <h3 class="box-title">便利貼</h3>
-                <div class="box-content">
-                    <p>買晚餐...</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="#" class="box-link">進入功能</a>
-            </div>
-        </li>
-        <li class="box">
-            <div>
-                <h3 class="box-title">番茄鐘</h3>
-                <div class="box-content">
-                    <p>專心點...</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="#" class="box-link">進入功能</a>
-            </div>
-        </li>
-        <li class="box">
-            <div>
-                <h3 class="box-title">...</h3>
-                <div class="box-content">
-                    <p>none</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="#" class="box-link">---</a>
-            </div>
-        </li>
-        <li class="box">
-            <div>
-                <h3 class="box-title">...</h3>
-                <div class="box-content">
-                    <p>none</p>
-                </div>
-            </div>
-            <div class="box-link-wrapper">
-                <a href="#" class="box-link">---</a>
-            </div>
-        </li>
     </ul>
+</nav>
+<!-- END OF SIDEBAR -->
+
+
+
+<!-- FIXED STICKNOTES -->
+<!-- <div class="fixed-btn">
+    <div class="sticker">
+        <a href="" class="button">
+            <span class="sticker-btn">便利貼</span>
+            <i class="fa-solid fa-note-sticky"></i>
+            <i class="fa-solid fa-pencil"></i>  
+        </a>
+    </div>
+</div> -->
+
+
+<!-- START OF MAIN CONTENT ON HOMEPAGE -->
+<section class="dashboard">
+<div class="dash-content">
+    <div class="overview">
+        <div class="title">
+            <i class="uil uil-bolt"></i>
+            <span class="text">功能列表</span>
+        </div>
+    </div>
+
+    <div class="boxes">
+        <div class="box box1">
+            <i class="fa-solid fa-book"></i>
+            <span class="function">筆記</span>
+            <a href="#" class="button">進入系統</a>
+        </div>
+        <div class="box box2">
+            <i class="fa-solid fa-note-sticky"></i>
+            <span class="function">便利貼</span>
+            <a href="#" class="button">進入系統</a>        
+        </div>
+        <div class="box box3">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="function">行事曆</span>        
+            <a href="#" class="button">進入系統</a>
+        </div>
+    </div>
+    <div class="boxes">
+        <div class="box box4">
+            <i class="fa-solid fa-comments-dollar"></i>
+            <span class="function">記帳</span>
+            <a href="#" class="button">進入系統</a>
+        </div>
+        <div class="box box5">
+            <i class="fa-solid fa-school"></i>
+            <span class="function">課表</span>
+            <a href="#" class="button">進入系統</a>        
+        </div>
+        <div class="box box6">
+            <i class="fa-solid fa-clock"></i>
+            <span class="function">番茄鐘</span>
+            <a href="#" class="button">進入系統</a>        
+        </div>
+    </div>
+    <!-- <span class="func2">便利貼</span>
+        <span class="func3">行事曆</span>
+        <span class="func4">記帳</span>
+        <span class="func5">課表</span>
+        <span class="func6">番茄鐘</span> -->
+
+
 </div>
-
 </section>
-<!-- End of function boxes -->
-
-
-
-
-
-
-<!---------JAVASCRIPT CODE--------------->
-<script src="script.js"></script>
+<!-- END OF MAIN CONTENT ON HOMEPAGE -->
 
 </body>
 </html>
