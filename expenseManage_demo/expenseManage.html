@@ -18,10 +18,28 @@
     <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2">
     <!-- css -->
     <link rel="stylesheet" href="expenseManage.css">
+    <link rel="stylesheet" href="新首頁/home.css">
     <!-- shorticon -->
     <link rel="shortcut icon" href="https://deanlife.blog/wp-content/uploads/2022/04/moneykeeper-1024x1024.png">
+
+
 </head>
 <body>
+<style>
+    .header.navbar{
+        width: 30px;
+    }
+    .sidebar ul, .sidebar ul li {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    .calendar{
+        margin-top: 90px;
+    }
+</style>
+
+
 <!-- ======= Header ======= -->
 <header class="header">
     <!-- offcanvas -->
@@ -29,7 +47,7 @@
         <i class="fa-solid fa-bars"></i>&nbsp;&nbsp;&nbsp;記帳
     </button>
 
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <!-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">        
         <div data-bs-theme="dark">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -56,19 +74,68 @@
         </ul>
         </div>
     </div>
-    </div>
+    </div> -->
 
     <!-- end of offcanvas -->
+    <!-- <h4>記帳</h4> -->
     <a href="#" class="logo">
         <h1>t4 NoteSystem</h1>
     </a>
-    <nav class="navbar">
-        <a href="#">財務報表  &nbsp;<i class="fa-solid fa-chart-line"></i> </a>
-    </nav>
+    <div class="navbar">
+        <a href="expensechart.html">財務報表  &nbsp;<i class="fa-solid fa-chart-line"></i> </a>
+    </div>
 </header>
 <!-- End OF Header -->
+
+<!-- START OF SIDEBAR -->
+<nav class="sidebar">
+    <ul>
+        <li><a href="#">
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <i class="fa-solid fa-house"></i>
+            <span class="nav-item">首頁</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-book"></i>
+            <span class="nav-item">筆記</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-note-sticky"></i>
+            <span class="nav-item">便利貼</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="nav-item">行事曆</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-comments-dollar"></i>
+            <span class="nav-item">記帳</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-school"></i>
+            <span class="nav-item">課表</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-clock"></i>
+            <span class="nav-item">番茄鐘</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="nav-item">登入</span>
+        </a></li>
+        <li><a href="#" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">登出</span>
+        </a></li>
+        
+    </ul>
+</nav>
+<!-- END OF SIDEBAR -->
+
+
+
 <!-- SECTION OF CALAENDAR NUMBER - CARSOUELL -->
-<section class="calendar-num">
+<div class="calendar-num">
     <div class="calendar">
         <div class="year">
             <div class="arrow right"></div>
@@ -88,7 +155,7 @@
             <div class="arrow left"></div>
         </div>
     </div>
-</section>
+</div>
 
 
 
@@ -155,7 +222,7 @@
     </div>
 </div>
 </section>
-<!----------------------- END OF TOGGLE ----------------------->
+<!----------------------- END OF MODAL ----------------------->
 
 <!-- START OF MAIN CONTENT -->
 <section class="main">
@@ -216,17 +283,28 @@
 <!-- END OF MAIN CONTENT -->
 
 
+
+
+
 <!---------JAVASCRIPT CODE--------------->
+<script>
+
+
+</script>
+
+
 <!-- <script src="expenseManage.js"></script> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script>
 // SHOWING THE CURRENT DATE
-var object = { 0: '星期天', 1: "星期一", 2: "星期二", 3: "星期三", 4: "星期四", 5: "星期五", 6: "星期六", }
-today = new Date();
-now_year = today.getFullYear();
-now_month = today.getMonth() + 1;
-now_day = today.getDate();
-document.getElementById("currentnow_date").innerHTML = now_year + "/" + now_month + "/" + now_day + ' ' + object[now_day];
+var weekdays = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+var today = new Date();
+var now_year = today.getFullYear();
+var now_month = today.getMonth() + 1;
+var now_day = today.getDate();
+var weekday = weekdays[today.getDay()]; // 取得星期幾
+document.getElementById("currentnow_date").innerHTML = now_year + "/" + now_month + "/" + now_day + ' ' + weekday;
+
 
 // calendar number
 const yearValue = document.querySelector('.year .value');
