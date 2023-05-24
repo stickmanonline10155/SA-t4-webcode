@@ -183,6 +183,7 @@ body {
 
 .header .btn-primary{
     font-size: 22px;
+    margin-right: 70px;
 }
 
 
@@ -192,6 +193,7 @@ body {
     /*額外加上的*/
     padding-top: 5px;
     color: #fff;
+    margin-right: 100px;
 }
 
 .header a:link {
@@ -205,7 +207,8 @@ body {
 }
 
 .header .navbar a {
-    margin: 0 1rem;
+    margin: 0 10px;
+    width: 110px;
     font-size: 1.6rem;
     color: #fff;
     border-bottom: var(--main-color);
@@ -216,6 +219,7 @@ body {
 
 .header .navbar a:hover {
     color: #a1b0cd;
+    text-decoration: underline .1rem solid #a1b0cd;
     border-bottom: .1rem solid #a1b0cd;
     padding-bottom: .1rem;
 }
@@ -273,7 +277,6 @@ body {
     padding-top: 25px;
     color: #fff;
     text-align: center;
-    border-bottom: none;
 }
 
 .header a:link {
@@ -352,7 +355,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #a1b0cd;
-    margin-top: 70px;
+    /* margin-top: 90px; */
 }
 
 .year,
@@ -765,3 +768,21 @@ option .highlight{
     letter-spacing: 1px;
     margin-right: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
