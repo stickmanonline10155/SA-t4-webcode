@@ -208,7 +208,7 @@ body {
 .fixed-addbtn .btn-primary {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 25px;
   cursor: pointer;
   border: none;
   background-color: #4c576d;
