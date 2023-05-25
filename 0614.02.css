@@ -1,4 +1,4 @@
-/*跳出對話筐、➕*/
+/*新增便利貼（跳出視窗）、➕*/
 body {
     background-color: rgb(255, 251, 251);
     width: 100%;
@@ -56,5 +56,8 @@ body {
         background-color: #4c576d;
     }
 
-    /*新增＿分類*/
-    
+    /*新增+號*/
+    .fa-solid fa-plus{
+        position: relative;
+        left: 15px;
+    }

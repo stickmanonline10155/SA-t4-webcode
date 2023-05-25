@@ -98,7 +98,6 @@ main {
 	color: #fff;
 }
 
-/*  */
 /*跳出對話筐、➕*/
 body {
     background-color: rgb(255, 251, 251);
@@ -219,7 +218,31 @@ body {
     padding-left: 0;
     justify-content: center;
 }
-
+/* --------------通知add button ------------------------*/
+.fixed-addbtn1 .btn-primary1 {
+    position: fixed;
+    bottom: 30px;
+    left: 25px;
+    cursor: pointer;
+    border: none;
+    background-color: #4c576d;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .fixed-addbtn1 .btn-primary1:hover {
+    background-color: #a1b0cd;
+    color: #4c576d;
+    padding-bottom: .1rem;
+  }
+  
+  .fixed-addbtn1 .btn-primary1 i {
+    font-size: 20px;
+    padding: 5px 3px;
+    padding-left: 0;
+    justify-content: center;
+  }
 
 
  

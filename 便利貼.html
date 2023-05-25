@@ -4,8 +4,8 @@
 <head>
 <title>筆記系統</title>
 <meta charset="UTF-8">
-<!-- 響應式網站 -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 響應式網站
+<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 
 <!-- Boostrap 導入程式 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
@@ -47,19 +47,16 @@
     </div>
     <br>
     <!--新增＿分類-->
-    <!-- Example single danger button -->
-<div class="btn-group">
-    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-      Action
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Action</a></li>
-      <li><a class="dropdown-item" href="#">Another action</a></li>
-      <li><a class="dropdown-item" href="#">Something else here</a></li>
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Separated link</a></li>
-    </ul>
-  </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          學業
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">學業</a></li>
+          <li><a class="dropdown-item" href="#">家庭</a></li>
+          <li><a class="dropdown-item" href="#">娛樂</a></li>
+        </ul>
+      </div>
       <br>
     <!-- 送出按鈕 -->
     <button type="button" class="btn btn-info"> ✓ </button>
