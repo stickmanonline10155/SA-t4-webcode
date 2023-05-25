@@ -31,13 +31,13 @@
   }
   
   #time{
-    margin-top:70px;
+    margin-top:60px;
     z-index : 1;
     position:relative;
   }
   
   #filler{
-    background : #ddffcc;
+    background : #4da6ff;
     height: 0px;
     width: 200px;
     position:absolute;
@@ -58,17 +58,19 @@
   }
   
   #buttons button#shortBreak{
-    background : #0c0;
+    color: #4da6ff;
+    background : #fff;
   }
   
   #buttons button#longBreak{
-    background : #080;
+    color: #4da6ff;
+    background : #fff;
   }
   
   #buttons button#stop{
     background : #f00;
   }
-/*便利貼頁面*/
+/*番茄鐘頁面*/
   .sticker-nav{
     margin-top: 0;
     width: 100%;
@@ -103,5 +105,129 @@
     position: relative;
     left: 45%;
     padding-top: 1%;
-  
   }
+
+/*灰白色底色*/
+  .graybgcolor{
+    position: relative;
+    left: 468px;
+    position:absolute;
+    top:58px;
+    padding-left: 2%;
+    padding-right: -300%;
+    z-index : -1;
+  }
+
+
+
+
+/*跳出對話筐、➕*/
+body {
+  background-color: rgb(255, 251, 251);
+  width: 100%;
+  }
+  
+  a {
+  text-decoration: none;
+  font-size: 75px;
+  color: rgb(1, 1, 1);
+  
+  position: fixed;
+  bottom: 37px;
+  right:7%;
+}
+  
+  .modal-header h3 {
+  font-size: 140%;
+  color: rgb(1, 1, 1);
+  }
+  
+  .remember {
+  margin-bottom: 20%;
+  }
+
+/*新增便利貼（跳出視窗）、➕*/
+body {
+  background-color: rgb(255, 251, 251);
+  width: 100%;
+  }
+  
+  a {
+  text-decoration: none;
+  font-size: 75px;
+  color: rgb(1, 1, 1);
+  
+  position: fixed;
+  bottom: 30px;
+  right:30px;
+}
+  
+  .modal-header h3 {
+  font-size: 30px;
+  color: rgb(1, 1, 1);
+  }
+  
+  .modal-content {
+  background-color: rgb(209, 206, 206);
+  }
+  
+
+  
+  .remember {
+  margin-bottom: 20px;
+  }
+  
+  .modal-body form .btn {
+  width: 10%;
+  font-size: 10px;
+  color: white;
+  position: relative; left:410px;
+  }
+
+
+  .sticker-file-nav-title{
+      color:#fff;
+      margin:0 auto;
+  }
+  
+  .btn btn-info{
+      font-size: 10%;
+      position: relative;
+      left: -20%;
+      background-color: #4c576d;
+  }
+
+  /*新增+號*/
+  .fa-solid fa-plus{
+      position: relative;
+      left: 15px;
+  }
+
+
+/* --------------add button ------------------------*/
+.fixed-addbtn .btn-primary {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  border: none;
+  background-color: #4c576d;
+  border-radius: 50%;
+
+  width: 40px;
+  height: 40px;
+}
+
+.fixed-addbtn .btn-primary:hover {
+  background-color: #a1b0cd;
+  color: #4c576d;
+  padding-bottom: .1rem;
+}
+
+.fixed-addbtn .btn-primary i {
+  font-size: 20px;
+  padding: 5px 3px;
+  padding-left: 0;
+  justify-content: center;
+}
+
