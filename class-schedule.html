@@ -8,10 +8,14 @@
     <title>課表</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/937e93c93c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2">
+    <link rel="stylesheet" href="./新首頁/home.css">
     <!-- css -->
+
     <!-- <link rel="stylesheet" href="expenseManage.css"> -->
     <style>
       .cs_table th {
@@ -158,52 +162,69 @@
         right: 0;
         text-align: center;
       }
+      
     </style>
-    
+     
     
 </head>
 <body> 
   <!--導覽列-->
-<nav>
-  <div class="sidebar">
-      <a href="javascript:void(0)"><i class="fa-solid fa-xmark" onclick="hideMenu()"></i></a>
-      
-      <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-      <!-- <i class="fa fa-times" onclick="hideMenu()"></i>--->
-      <div class="logo">
-          <!-- <i class="fa-solid fa-bars"></i> -->
-          <a href="homepage.html"><h3 align = "center">LOGO</h3></a>
-      </div>
-      <div class="search-box">
-          <input type="text" class="search" placeholder="搜尋..." >
-      </div>
-      <div>
-      <ul id="homepage-menu">
-          <li><a href="note-file.html">筆記</a></li>
-          <li><a href="sticker.html">便利貼</a></li>
-          <li><a href="#"><i class="fa-solid fa-calendar-lines"></i>行事曆</a></li>
-          <li><a href="#">記帳</a></li>
-          <li><a href="schedule-file.html">課表</a></li>
-          <li class="setting"><a href="#"><i class="fa-solid fa-gear"></i>&nbsp;&nbsp; 設定</a></li>
-          <li class="signup"><a href="login.html"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;&nbsp; 登入 / 註冊</a></li>   
-          <li class="logout"><a href="#"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; 登出</a></li>
-      </ul>
-      </div>
-      <div class="dark-mode">
-          <span><i class="fa-solid fa-moon"></i></span>
-      </div>
-      
-  </div>
-  <a href="javascript:void(0)"><i class="fa-solid fa-bars" onclick="showMenu()"></i></a>
+  <nav class="sidebar">
+    <ul>
+        <li><a href="#">
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <i class="fa-solid fa-house"></i>
+            <span class="nav-item">首頁</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-book"></i>
+            <span class="nav-item">筆記</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-note-sticky"></i>
+            <span class="nav-item">便利貼</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="nav-item">行事曆</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-comments-dollar"></i>
+            <span class="nav-item">記帳</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-school"></i>
+            <span class="nav-item">課表</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-clock"></i>
+            <span class="nav-item">番茄鐘</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="nav-item">登入</span>
+        </a></li>
+        <li><a href="#" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">登出</span>
+        </a></li>
+        
+    </ul>
 </nav>
-<div class="note-nav">
-  <div class="note-file-nav-title" >
-      <h5>課表</h5>
-  </div>
-  
-</div>
+<!-- END OF SIDEBAR -->
 
-  <table id="schedule" class="cs_table">
+<header class="headbar">
+  <div href="#" class="main-link">
+      <i class="fa-solid fa-school fa-xl" style="color:white;margin-right: 10px;"></i>
+      <div style="color: white;margin-left: 10px;font-size: 20px;margin-top: 10px;margin-bottom: 10px;">課表</div>
+      <div style="color: white;margin-left: 400px;font-size: 23px;margin-top: 10px;margin-bottom: 10px;">T4 NoteSystem</div>
+  </div>>
+  
+</header>
+
+
+
+  <table id="schedule" class="cs_table" style="margin-top:100px">
     <tr>
       <th></th>
       <th>一</th>
@@ -330,20 +351,20 @@
   
   <!-- 新增課程的表單 -->
   <form id="add-course-form" align="center" class="cs_form">
-    <a name="cs_form"><h4>新增課程</h4><br></a>
-    <label for="course-name">課程名&nbsp;</label>
-    <input type="text" id="course-name" name="course-name" required><br><br>
+    <p name="cs_form" style="margin: auto;font-size: 24px;"><b>新增課程</b><br><br></p>
+    <label for="course-name" style="font-size: 20px;">課程名&nbsp;</label>
+    <input type="text" id="course-name" name="course-name" style="font-size: 19px;text-align: center;border-radius: 8px;" required><br><br>
   
-    <label for="day">星期&nbsp;</label>
-    <select id="day" name="day" required>
+    <label for="day" style="font-size: 19px;">星期&nbsp;</label>
+    <select id="day" name="day" style="font-size: 19px;" required>
       <option value="1">一</option>
       <option value="2">二</option>
       <option value="3">三</option>
       <option value="4">四</option>
       <option value="5">五</option>
     </select><br><br>
-    <label for="start-time">開始節次&nbsp;</label>
-    <select id="start-time" name="start-time" required>
+    <label for="start-time" style="font-size: 19px;">開始節次&nbsp;</label>
+    <select id="start-time" name="start-time" style="font-size: 19px;" required>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -360,8 +381,8 @@
       <option value="14">13</option>
     </select><br><br>
   
-    <label for="end-time">結束節次&nbsp;</label>
-    <select id="end-time" name="end-time" required>
+    <label for="end-time" style="font-size: 19px;">結束節次&nbsp;</label>
+    <select id="end-time" name="end-time" style="font-size: 19px;" required>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -380,11 +401,23 @@
     </select><br><br>
 
     
-    <label for="teacher-name">備註&nbsp;</label>
-    <input type="text" id="teacher-name" name="teacher-name" required><br><br>
+    <label for="teacher-name" style="font-size: 19px;" >備註&nbsp;</label>
+    <input type="text" id="teacher-name" name="teacher-name" style="font-size: 19px;text-align: center;border-radius: 8px;" required><br><br>
 
-    <input type="submit" value="完成" style="width:70px; height:30px">
+    <input class="finish" type="submit" value="完成" style="width:70px; height:30px;font-size: 18px;border-radius: 8px;background-color:#4c576d;color: white;">
+    
+    <script>
+      window.onload = function() {
+      function changeColor() {
+      var finish = document.getElementsByClassName("finish")[0];
+      finish.classList.add("color-change");
+    }
 
+    function restoreColor() {
+      var finish = document.getElementsByClassName("finish")[0];
+      finish.classList.remove("color-change");
+    }}
+    </script>
   </form>
 
   <!-- fixed add button
@@ -429,11 +462,13 @@
 
   // 插入课程
   if (rowIndex !== -1) {
-    const cell = rows[rowIndex].cells[day];
-    cell.rowSpan = Number(endTime) - Number(startTime) + 1;
-    cell.textContent = courseName;
-    cell.style.backgroundColor = "lightgrey";
-  }
+  const cell = rows[rowIndex].cells[day];
+  cell.rowSpan = Number(endTime) - Number(startTime) + 1;
+  cell.innerHTML = '<span class="course">' + courseName + '</span><br><span class="teacher">' + teacherName + '</span>';
+  cell.style.backgroundColor = "lightgrey";
+}
+
+
 
   // 清空表单
   form.reset();
@@ -441,6 +476,16 @@
 
 
   </script>
+  // CSS样式
+  <style>
+    .course {
+      color: black;
+    }
+    .teacher {
+      color: gray;
+    }
+  </style>
+  
   <!---------JAVASCRIPT CODE--------------->
 <script src="script.js"></script>
       </body>
