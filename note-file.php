@@ -13,50 +13,219 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/937e93c93c.js" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2">
     <link rel="stylesheet" href="style.css">
+    <style>
+        
+/* --------HEADER---------- */
+.headbar{
+    background-color: #4c576d;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+}
+
+.main-link{
+    display: flex;
+    align-items: center;
+    margin-left: 70px;
+}
+
+.main-link img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.mainlogo{
+    margin-left: 10px;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.mainlogo:hover{
+    color: #a1b0cd;
+    /* padding-bottom: .1rem; */
+}
+
+.headbar a:hover{
+    text-decoration: underline #a1b0cd;
+    color: #a1b0cd;
+    /* padding-bottom: .1rem; */
+}
+
+.upright-func {
+    display: flex;
+}
+
+.upright-func a{
+    font-size: 15px;
+
+}
+
+.upright-func1{
+    width: 50px;
+    margin-right: 10px;
+}
+
+.upright-func2{
+    width: 50px;
+    margin-right: 80px;    
+}
+.upright-func1 a{
+    position: relative;
+    align-items: center;
+    color: rgb(250, 249, 249);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 5px;
+}
+
+.upright-func2 a{
+    position: relative;
+    color: rgb(250, 249, 249);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 5px;
+}
+
+/* ============ nav - SIDEBAR ============== */
+.sidebar{
+    position: fixed;
+    top: 17%;
+    bottom: 0;
+    height: 70%;
+    left: 0;
+    background-color: #fff;
+    width: 75px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    z-index: 1001;
+}
+.sidebar a{
+    position: relative;
+    color: rgb(250, 249, 249);
+    font-size: 14px;
+    display: table;
+    width: 300px;
+    padding: 5px;
+}
+.nav-item1{
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    color: #4c576d;
+}
+.sidebar a:hover{
+    background: #c4d5f5;
+}
+
+.sidebar:hover{
+    width: 200px;
+    transition: all 0.5s ease;
+}
+.sidebar i{
+    color: #4c576d;
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+    </style>
+    
 </head>
 <body>
 <!--導覽列-->
-<nav>
-    <div class="sidebar">
-        <a href="javascript:void(0)"><i class="fa-solid fa-xmark" onclick="hideMenu()"></i></a>
-        
-        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
-        <!-- <i class="fa fa-times" onclick="hideMenu()"></i>--->
-        <div class="logo">
+
+<nav class="sidebar">
+    <ul>
+        <li><a href="#">
             <!-- <i class="fa-solid fa-bars"></i> -->
-            <a href="homepage.html"><h3 align = "center">LOGO</h3></a>
-        </div>
-        <div class="search-box">
-            <input type="text" class="search" placeholder="搜尋..." >
-        </div>
-        <div>
-        <ul id="homepage-menu">
-            <li><a href="note-file.html">筆記</a></li>
-            <li><a href="sticker.html">便利貼</a></li>
-            <li><a href="#"><i class="fa-solid fa-calendar-lines"></i>行事曆</a></li>
-            <li><a href="#">記帳</a></li>
-            <li><a href="schedule-file.html">課表</a></li>
-        </ul>
-        </div>
-        <div class="dark-mode">
-            <span><i class="fa-solid fa-moon"></i></span>
-        </div>
+            <i class="fa-solid fa-house"></i>
+            <span class="nav-item1">首頁</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-book"></i>
+            <span class="nav-item1">筆記</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-note-sticky"></i>
+            <span class="nav-item1">便利貼</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="nav-item1">行事曆</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-comments-dollar"></i>
+            <span class="nav-item1">記帳</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-school"></i>
+            <span class="nav-item1">課表</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-clock"></i>
+            <span class="nav-item1">番茄鐘</span>
+        </a></li>
+        <li><a href="#">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="nav-item1">登入</span>
+        </a></li>
+        <li><a href="#" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item1">登出</span>
+        </a></li>
         
-    </div>
-    <a href="javascript:void(0)"><i class="fa-solid fa-bars" onclick="showMenu()"></i></a>
+    </ul>
 </nav>
-<div class="note-nav">
-    <div class="note-file-nav-title" >
-        <h5>筆記</h5>
+
+<header class="headbar">
+  <div href="#" class="main-link">
+      <i class="fa-solid fa-book fa-xl" style="color:white;margin-right: 10px;"></i>
+      <div style="color: white;margin-left: 10px;font-size: 20px;margin-top: 10px;margin-bottom: 10px;">筆記</div>
+      <a href="homepage.html" >
+        <div 
+        style="color: white; 
+        width: 200px; 
+        margin-left: 500px;
+        font-size: 23px;
+        margin-top: 10px;
+        margin-bottom: 10px;" class="logotitle">T4 NoteSystem</div>
+      </a>
+  </div>
+  
+  <div class="upright-func">
+    <div class="upright-func1">
+        <a href="#login">Login</a>
     </div>
-    
+    <div class="upright-func2">
+        <a href="#sign up">Sign up</a>
+    </div>
 </div>
+</header>
 
 
 <!--new 筆記分類-->
-<ul class="nav nav-tabs" id="myTab" role="tablist">
+<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top:78px;">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">所有筆記</button>
     </li>
@@ -199,14 +368,21 @@
         </div>
     </div>
   </div>
-<!--筆記檔案區-->
+<!--筆記檔案區--> 
 
 
 
 
 <!--懸浮按鈕-->
-<div class="add-note">
-    <a href="note_insert.php" style="text-decoration: none;">+</a>
+<div style="position: fixed;bottom: 30px;right: 25px;">
+    <a href="note_insert.php" style="text-decoration: none;display: block;
+    color:white;
+    font-weight:bolder;
+    font-size:20px;
+    background-color:#4c576d;
+    border:1px solid #ccc;
+    padding:7px 15px 7px 15px;
+    border-radius:100%;"><i class="fa-solid fa-plus fa-sm"></i></a>
 </div>
     
 
