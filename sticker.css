@@ -168,7 +168,7 @@ body {
 .color-lump2{
     width:20%;
     height: 270px;
-    background-color: #4ac5fa;
+    background-color: #fade25;
     position: relative;
     left: 20%;
     top: 80px;
@@ -177,7 +177,7 @@ body {
 .color-lump3{
     width:20%;
     height: 270px;
-    background-color: #fc4ec2;
+    background-color: #fade25;
     position: relative;
     left: 20%;
     top: 80px;
@@ -244,6 +244,27 @@ body {
     justify-content: center;
   }
 
-
- 
-  
+/**/
+  body {
+    background-color: rgb(255, 251, 251);
+    width: 100%;
+    }
+    
+    a {
+    text-decoration: none;
+    font-size: 75px;
+    color: rgb(1, 1, 1);
+    
+    position: fixed;
+    bottom: 37px;
+    right:7%;
+}
+    
+    .modal-header1 h3 {
+    font-size: 140%;
+    color: rgb(1, 1, 1);
+    }
+    
+    .modal-content1 {
+    background-color: rgb(209, 206, 206);
+    }
