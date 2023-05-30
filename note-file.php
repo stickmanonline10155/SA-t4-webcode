@@ -123,7 +123,8 @@
 }
 .nav-item1{
     position: relative;
-    top: 10px;
+    margin-top:auto;
+    margin-bottom:auto;
     margin-left: 10px;
     font-size: 16px;
     color: #4c576d;
@@ -140,8 +141,9 @@
     color: #4c576d;
     position: relative;
     width: 70px;
-    height: 40px;
-    top: 14px;
+    height: 30px;
+    margin-top:auto;
+    margin-bottom:auto;
     font-size: 20px;
     text-align: center;
 }
