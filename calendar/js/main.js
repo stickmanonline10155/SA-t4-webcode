@@ -183,6 +183,7 @@ function show_events(events, month, day) {
         var event_card = $("<div class='event-card'></div>");
         var event_name = $("<div class='event-name'>"+month+" "+day+"日&nbsp;還沒有安排</div>");
         $(event_card).css({ "border-left": "10px solid #FF1744" });
+        $(event_name).css({ "font-size": "15px" });
         $(event_card).append(event_name);
         $(".events-container").append(event_card);
     }
