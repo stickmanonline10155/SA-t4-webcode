@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="reminder.css">
+    <link rel="shortcut icon" href="images/icons8-note-64.png" />
+    <script src="https://kit.fontawesome.com/2be1d00d34.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"> 
+</head>
+
+<body>
+<!-- START OF Header -->
+<header class="headbar">
+    <a href="#" class="main-link">
+        <img src="images/icons8-note-64.png" alt="">
+        <div class="mainlogo">t4 syst</div>
+    </a>
+    <div class="upright-func">
+        <div class="upright-func0">
+            <a href="reminder.html"><i class="fa-solid fa-bell"></i>&nbsp; 提醒通知</a>
+        </div>
+        <div class="upright-func1">
+            <a href="#login">Login</a>
+        </div>
+        <div class="upright-func2">
+            <a href="#sign up">Sign up</a>
+        </div>
+    </div>
+</header>
+<!-- END OF Header -->
+
+<!-- START OF SIDEBAR -->
+<nav class="sidebar">
+    <ul>
+        <li><a href="homepage.php">
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <i class="fa-solid fa-house"></i>
+            <span class="nav-item">首頁</span>
+        </a></li>
+        <li><a href="note-file.php">
+            <i class="fa-solid fa-book"></i>
+            <span class="nav-item">筆記</span>
+        </a></li>
+        <li><a href="newsticker.php">
+            <i class="fa-solid fa-note-sticky"></i>
+            <span class="nav-item">便利貼</span>
+        </a></li>
+        <li><a href="calendar\index.html">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span class="nav-item">行事曆</span>
+        </a></li>
+        <li><a href="expenseManage.php">
+            <i class="fa-solid fa-comments-dollar"></i>
+            <span class="nav-item">記帳</span>
+        </a></li>
+        <li><a href="class-schedule.php">
+            <i class="fa-solid fa-school"></i>
+            <span class="nav-item">課表</span>
+        </a></li>
+        <li><a href="tomato.html">
+            <i class="fa-solid fa-clock"></i>
+            <span class="nav-item">番茄鐘</span>
+        </a></li>
+        <li><a href="login.php">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="nav-item">登入</span>
+        </a></li>
+        <li><a href="" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span class="nav-item">登出</span>
+        </a></li>
+        
+    </ul>
+</nav>
+<!-- END OF SIDEBAR -->
+
+
+
+
+<!-- START OF MAIN CONTENT OF REMINDER  -->
+<!-- 課表、便利貼、行事曆 -->
+<div class="container">
+    <div class="notifications">
+        <h2 class="tb-title"><i class="fa-solid fa-bell" style="margin-right: 10px; margin-bottom: 20px;"></i>提醒訊息 類別</h2>
+        <ul>
+            <a href="#sticker-remind" class="reminder-a"><li>提醒 - 便利貼</li></a>
+            <a href="#calendar-remind" class="reminder-a"><li>提醒 - 行事曆</li></a>
+            <a href="#school-remind" class="reminder-a"><li>提醒 - 課表</li></a>
+        </ul>
+    </div>
+    <div class="functions">
+        <h2 class="tb-title"><i class="fa-solid fa-list" style="margin-right: 10px; margin-bottom: 20px;"></i>提醒訊息列表</h2>
+        <div class="function" id="sticker-remind">
+            <h3 id="function-remind"><i class="fa-solid fa-note-sticky"></i> 便利貼</h3>
+            <table>
+                <tr>
+                    <th>提醒內容</th>
+                    <th>功能所屬</th>
+                </tr>
+                <tr>
+                    <td id="sticker_message-1" class="notify">便利貼通知 1</td>
+                    <td id="func-td" class="funcspace">便利貼</td>
+                </tr>
+                <tr>
+                    <td id="sticker_message-2" class="notify">便利貼通知 2</td>
+                    <td id="func-td" class="funcspace">便利貼</td>
+                </tr>
+            </table>
+        </div>
+        <div class="function" id="calendar-remind">
+            <h3 id="function-remind"><i class="fa-solid fa-calendar-days"></i> 行事曆</h3>
+            <table>
+                <tr>
+                    <th>提醒內容</th>
+                    <th>時間</th>
+                </tr>
+                <tr>
+                    <td id="calendar_message-1" class="notify">行事曆通知 1</td>
+                    <td id="func-td" class="funcspace">2023-05-18 09:00</td>
+                </tr>
+                <tr>
+                    <td id="calendar_message-1" class="notify">行事曆通知 2</td>
+                    <td id="func-td" class="funcspace">2023-05-18 13:45</td>
+                </tr>
+            </table>
+        </div>
+        <div class="function" id="school-remind">
+            <h3 id="function-remind"><i class="fa-solid fa-school"></i> 課表</h3>
+            <table>
+                <tr>
+                    <th>提醒內容</th>
+                    <th>功能所屬</th>
+                </tr>
+                <tr>
+                    <td id="school_message-1" class="notify">課表通知 1</td>
+                    <td id="func-td" class="funcspace">課表</td>
+                </tr>
+                <tr>
+                    <td id="school_message-1" class="notify">課表通知 2</td>
+                    <td id="func-td" class="funcspace">課表</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- END OF MAIN CONTENT OF REMINDER -->
+
+
+<!-----------------------------------------------
+    以下是刷新頁面後，過兩秒，模擬跳出新的一列的js code 
+------------------------------------------------------>
+<script>
+    // 監聽通知新事件，獲取通知數據並添加到相應功能表格
+function addRowToFunction(functionId, message, attribute) {
+    // 找到對應功能的表格
+    var table = document.querySelector("#" + functionId + " table");
+
+    // 創建新的表格行
+    var row = table.insertRow();
+
+    // 創建單元格並設置內容
+    var messageCell = row.insertCell();
+    messageCell.textContent = message;
+
+    var attributeCell = row.insertCell();
+    attributeCell.textContent = attribute;
+}
+
+// 模擬後端通信新增加，調用addRowToFunction函數來添加表格行
+function simulateNotificationAdd() {
+    // 這裡使用setTimeout模擬異步操作
+    setTimeout(function() {
+        // 假裝後端返回的數據
+        var newData = {
+            functionId: "sticker-remind",
+            message: "新增通知",
+            attribute: "便利贴"
+        };
+
+        // 添加新行到對應功能表格
+        addRowToFunction(newData.functionId, newData.message, newData.attribute);
+    }, 2000); // 模擬2秒後終端返回數據
+}
+
+// 調用模擬後端口知道新增加的函數數
+simulateNotificationAdd();
+
+</script>
+</body>
+</html>
