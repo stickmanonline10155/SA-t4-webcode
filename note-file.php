@@ -1,3 +1,45 @@
+<!-- index.php -->
+
+<?php
+// 連接到資料庫
+$servername = "localhost";
+$username = "root";
+$password = "fallnight5137";
+$database = "test";
+
+$link=mysqli_connect('localhost','root','fallnight5137','test');
+
+if (!$link) {
+    die("資料庫連接失敗：" . mysqli_connect_error());
+}
+
+
+// 執行外鍵關聯的 SQL 語句
+$alterSql = "ALTER TABLE notes ADD CONSTRAINT fk_folder FOREIGN KEY (folder_id) REFERENCES folder(folder_id)";
+
+// 從資料庫中獲取分類資料
+$foldersSql = "SELECT * FROM folder";
+$folderResult = mysqli_query($link, $foldersSql);
+
+// 檢查選擇的分類
+if (isset($_GET['folder_id'])) {
+    $selectedFolder = $_GET['folder_id'];
+
+    // 使用預處理語句來防止SQL注入攻擊
+    $notesSql = "SELECT * FROM notes WHERE folder_id = ?";
+    $stmt = mysqli_prepare($link, $notesSql);
+    mysqli_stmt_bind_param($stmt, "i", $selectedFolder);
+    mysqli_stmt_execute($stmt);
+    $notesResult = mysqli_stmt_get_result($stmt);
+} else {
+    // 如果未選擇分類，顯示所有筆記資料
+    $notesSql = "SELECT * FROM notes";
+    $notesResult = mysqli_query($link, $notesSql);
+    $notes = mysqli_fetch_all($notesResult, MYSQLI_ASSOC);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,240 +55,70 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/937e93c93c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://unpkg.com/@popperjs/core@2">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        
-/* --------HEADER---------- */
-.headbar{
-    background-color: #4c576d;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 1000;
-}
-
-.main-link{
-    display: flex;
-    align-items: center;
-    margin-left: 70px;
-}
-
-.main-link img{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.mainlogo{
-    margin-left: 10px;
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-}
-
-.mainlogo:hover{
-    color: #a1b0cd;
-    /* padding-bottom: .1rem; */
-}
-
-.headbar a:hover{
-    text-decoration: underline #a1b0cd;
-    color: #a1b0cd;
-    /* padding-bottom: .1rem; */
-}
-
-.upright-func {
-    display: flex;
-}
-
-.upright-func a{
-    font-size: 15px;
-
-}
-
-.upright-func1{
-    width: 50px;
-    margin-right: 10px;
-}
-
-.upright-func2{
-    width: 50px;
-    margin-right: 80px;    
-}
-.upright-func1 a{
-    position: relative;
-    align-items: center;
-    color: rgb(250, 249, 249);
-    font-size: 14px;
-    display: table;
-    width: 300px;
-    padding: 5px;
-}
-
-.upright-func2 a{
-    position: relative;
-    color: rgb(250, 249, 249);
-    font-size: 14px;
-    display: table;
-    width: 300px;
-    padding: 5px;
-}
-
-/* ============ nav - SIDEBAR ============== */
-.sidebar{
-    position: fixed;
-    top: 17%;
-    bottom: 0;
-    height: 70%;
-    left: 0;
-    background-color: #fff;
-    width: 75px;
-    overflow: hidden;
-    transition: width 0.2s linear;
-    box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    z-index: 1001;
-}
-.sidebar a{
-    position: relative;
-    color: rgb(250, 249, 249);
-    font-size: 14px;
-    display: table;
-    width: 300px;
-    padding: 5px;
-}
-.nav-item1{
-    position: relative;
-    margin-top:auto;
-    margin-bottom:auto;
-    margin-left: 10px;
-    font-size: 16px;
-    color: #4c576d;
-}
-.sidebar a:hover{
-    background: #c4d5f5;
-}
-
-.sidebar:hover{
-    width: 200px;
-    transition: all 0.5s ease;
-}
-.sidebar i{
-    color: #4c576d;
-    position: relative;
-    width: 70px;
-    height: 30px;
-    margin-top:auto;
-    margin-bottom:auto;
-    font-size: 20px;
-    text-align: center;
-}
-.logout{
-    position: absolute;
-    bottom: 0;
-}
-    </style>
     
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!--導覽列-->
-
-<nav class="sidebar">
-    <ul>
-        <li><a href="#">
-            <!-- <i class="fa-solid fa-bars"></i> -->
-            <i class="fa-solid fa-house"></i>
-            <span class="nav-item1">首頁</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fa-solid fa-book"></i>
-            <span class="nav-item1">筆記</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fa-solid fa-note-sticky"></i>
-            <span class="nav-item1">便利貼</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fa-solid fa-calendar-days"></i>
-            <span class="nav-item1">行事曆</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fa-solid fa-comments-dollar"></i>
-            <span class="nav-item1">記帳</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fa-solid fa-school"></i>
-            <span class="nav-item1">課表</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fa-solid fa-clock"></i>
-            <span class="nav-item1">番茄鐘</span>
-        </a></li>
-        <li><a href="#">
-            <i class="fa-solid fa-right-to-bracket"></i>
-            <span class="nav-item1">登入</span>
-        </a></li>
-        <li><a href="#" class="logout">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span class="nav-item1">登出</span>
-        </a></li>
+<nav>
+    <div class="sidebar">
+        <a href="javascript:void(0)"><i class="fa-solid fa-xmark" onclick="hideMenu()"></i></a>
         
-    </ul>
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <!-- <i class="fa fa-times" onclick="hideMenu()"></i>--->
+        <div class="logo">
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <a href="homepage.php"><h3 align = "center">LOGO</h3></a>
+        </div>
+        <div class="search-box">
+            <input type="text" class="search" placeholder="搜尋..." >
+        </div>
+        <div>
+        <ul id="homepage-menu">
+            <li><a href="note-file.html">筆記</a></li>
+            <li><a href="sticker.html">便利貼</a></li>
+            <li><a href="#"><i class="fa-solid fa-calendar-lines"></i>行事曆</a></li>
+            <li><a href="#">記帳</a></li>
+            <li><a href="schedule-file.html">課表</a></li>
+        </ul>
+        </div>
+        <div class="dark-mode">
+            <span><i class="fa-solid fa-moon"></i></span>
+        </div>
+        
+    </div>
+    <a href="javascript:void(0)"><i class="fa-solid fa-bars" onclick="showMenu()"></i></a>
 </nav>
-
-<header class="headbar">
-  <div href="#" class="main-link">
-      <i class="fa-solid fa-book fa-xl" style="color:white;margin-right: 10px;"></i>
-      <div style="color: white;margin-left: 10px;font-size: 20px;margin-top: 10px;margin-bottom: 10px;">筆記</div>
-      <a href="homepage.html" >
-        <div 
-        style="color: white; 
-        width: 200px; 
-        margin-left: 500px;
-        font-size: 23px;
-        margin-top: 10px;
-        margin-bottom: 10px;" class="logotitle">T4 NoteSystem</div>
-      </a>
-  </div>
-  
-  <div class="upright-func">
-    <div class="upright-func1">
-        <a href="#login">Login</a>
+<div class="note-nav">
+    <div class="note-file-nav-title" >
+        <h5>筆記</h5>
     </div>
-    <div class="upright-func2">
-        <a href="#sign up">Sign up</a>
-    </div>
+    
 </div>
-</header>
+    <!-- 顯示選項卡 --> 
+    <form action="" method="get">
+    <label for="folder">選擇分類：</label>
+    <select name="folder_id" id="folder">
+        <?php
+        // 從資料庫中獲取分類資料
+        $foldersSql = "SELECT * FROM folder";
+        $foldersResult = mysqli_query($link, $foldersSql);
 
+        // 遍歷分類結果集，生成選項
+        while ($folder = mysqli_fetch_assoc($foldersResult)) {
+            $selected = '';
+            if (isset($_GET['folder_id']) && $_GET['folder_id'] == $folder['folder_id']) {
+                $selected = 'selected';
+            }
+            echo '<option value="' . $folder['folder_id'] . '" ' . $selected . '>' . $folder['folder_name'] . '</option>';
+        }
+        ?>
+    </select>
+    <input type="submit" value="選擇">
+    </form>
 
-<!--new 筆記分類-->
-<ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top:78px;">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">所有筆記</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">資料結構</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">網路概論</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="economics-tab" data-bs-toggle="tab" data-bs-target="#economics" type="button" role="tab" aria-controls="economics" aria-selected="false">經濟學</button>
-      </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="add-tab" type="button">+</button>
-    </li>
-      
-  </ul>
-  <!--新增分類按鈕js-->
-  <script>
+    </ul>
+    <script>
     //在網頁找到'id=add-tab'，並儲存到'addButton'變數
     const addButton = document.getElementById('add-tab');
 
@@ -275,120 +147,60 @@
 });
 
   </script>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <div class="note-file">
-            <div class="note-file-icon">
-                <div class="nf-title">
-                        <a href="note_demo/demo_1.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                        <p align="center">演算法</p>
-                    
-                </div>
-            </div>
-        
-            <div class="note-file-icon">
-                <div class="nf-title">
-                <a href="note_demo/demo_2.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                <p align="center">IoT演講</p>
-                </div>
-            </div>
-        
-            <div class="note-file-icon">
-                <div class="nf-title">
-                <a href="note_demo/demo_3.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                <p align="center">Unemployment</p>
-                </div>
-            </div>
-        
-            <div class="note-file-icon">
-                <div class="nf-title">
-                <a href="note_demo/demo_4.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                <p align="center">鏈結串列</p>
-                </div>
-            </div>
-        
-            <div class="note-file-icon">
-                <div class="nf-title">
-                <a href="note_demo/demo_5.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                <p align="center">樹狀結構</p>
-                </div>
-            </div>
-        
-            
-        
-        </div>
-    </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <div class="note-file">
-            <div class="note-file-icon">
-                <div class="nf-title">
-                        <a href="note_demo/demo_1.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                        <p align="center">演算法</p>
-                    
-                </div>
-            </div>
-        
-            
-        
-            <div class="note-file-icon">
-                <div class="nf-title">
-                <a href="note_demo/demo_4.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                <p align="center">鏈結串列</p>
-                </div>
-            </div>
-        
-            <div class="note-file-icon">
-                <div class="nf-title">
-                <a href="note_demo/demo_5.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                <p align="center">樹狀結構</p>
-                </div>
-            </div>
-        
-            
-        
-        </div>
-    </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-        <div class="note-file">
 
-            <div class="note-file-icon">
-                <div class="nf-title">
-                <a href="note_demo/demo_2.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-                <p align="center">IoT演講</p>
-                </div>
-            </div>
-        </div>
+<!-- 顯示筆記內容 -->
+<div class="tab-content" id="myTabContent">
+    
+
+<?php
+if ($selectedFolder == 1) {
+    // 顯示所有筆記
+    $notesSql = "SELECT * FROM notes";
+    $notesResult = mysqli_query($link, $notesSql);
+} else {
+    // 顯示特定分類的筆記
+    $notesSql = "SELECT * FROM notes WHERE folder_id = ?";
+    $stmt = mysqli_prepare($link, $notesSql);
+    mysqli_stmt_bind_param($stmt, "i", $selectedFolder);
+    mysqli_stmt_execute($stmt);
+    $notesResult = mysqli_stmt_get_result($stmt);
+}
+
+?>
+
+    <div class="note-file">
+        <?php
+        while ($row = mysqli_fetch_assoc($notesResult)) {
+            echo '<div class="note-file-icon">';
+            echo '<div class="nf-title">';
+            echo '<a href="note-edit.php?note_id=' . $row['note_id'] . '&title=' . urlencode($row['title']) . '"><img src="images/file.png" class="img-thumbnail file-icon" alt="..."></a>';
+            echo '<p class="note-title">' . $row['title'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+        }
+        ?>
     </div>
-    <div class="tab-pane fade" id="economics" role="tabpanel" aria-labelledby="economics-tab">
-        <div class="note-file">
-        <div class="note-file-icon">
-            <div class="nf-title">
-            <a href="note_demo/demo_3.html"><img src="images/file.png" class="img-thumbnail" alt="..." style="border-color: #fff;"></a>
-            <p align="center">Unemployment</p>
-            </div>
-        </div>
-        </div>
-    </div>
-  </div>
-<!--筆記檔案區--> 
+
+</div>
+
+<!--筆記檔案區-->
 
 
 
 
 <!--懸浮按鈕-->
-<div style="position: fixed;bottom: 30px;right: 25px;">
-    <a href="note_insert.php" style="text-decoration: none;display: block;
-    color:white;
-    font-weight:bolder;
-    font-size:20px;
-    background-color:#4c576d;
-    border:1px solid #ccc;
-    padding:7px 15px 7px 15px;
-    border-radius:100%;"><i class="fa-solid fa-plus fa-sm"></i></a>
+<div class="add-note">
+    <a href="note-insert.php" style="text-decoration: none;">+</a>
 </div>
     
 
 <!---------JAVASCRIPT CODE--------------->
 <script src="script.js"></script>
+
+</form>   
+
+</body>
+</html>
+
 </body>
 </html>
