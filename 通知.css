@@ -1,0 +1,128 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+/*通知頁面*/
+.sticker-nav{
+    margin-top: 0;
+    width: 100%;
+    height: 43px;
+    background-color: #4c576d;
+    display: flex;
+    align-items: center;
+   
+    }
+
+    .sticker-file-nav-title{
+        color:#fff;
+        margin:0 auto;
+        font-size: 25px;
+    }
+    .burger{
+        color:#fff;
+        font-size: 30px;
+    }
+
+/*通知*/
+.accordion-list {
+    padding: 0 100px 60px 100px;
+  }
+  
+.accordion-list ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+.accordion-list li+li {
+    margin-top: 15px;
+  }
+  
+.accordion-list li {
+    padding: 20px;
+    background: #fff;
+    border-radius: 4px;
+  }
+  
+.accordion-list a {
+    display: block;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    padding-right: 30px;
+    outline: none;
+    cursor: pointer;
+  }
+  
+.accordion-list span {
+    color: #47b2e4;
+    font-weight: 600;
+    font-size: 18px;
+    padding-right: 10px;
+  }
+  
+.accordion-list i {
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  
+.accordion-list p {
+    margin-bottom: 0;
+    padding: 10px 0 0 0;
+  }
+  
+.accordion-list .icon-show {
+    display: none;
+  }
+
+.accordion-list a.collapsed {
+    color: #343a40;
+  }
+  
+.accordion-list a.collapsed:hover {
+    color: #47b2e4;
+  }
+  
+.accordion-list a.collapsed .icon-show {
+    display: inline-block;
+  }
+  
+.accordion-list a.collapsed .icon-close {
+    display: none;
+  }
+  
+  @media (max-width: 1024px) {
+  
+.accordion-list {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .why-us .img {
+      min-height: 400px;
+    }
+  
+    .why-us .content {
+      padding-top: 30px;
+    }
+  
+    .why-us .accordion-list {
+      padding-bottom: 30px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .why-us .img {
+      min-height: 200px;
+    }
+  }
+  
