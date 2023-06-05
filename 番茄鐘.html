@@ -71,16 +71,27 @@
         </div>
       </div>
 <script>
+  /*物件的屬性和變數：*/
         var pomodoro = {
+    /*布林值，表示番茄鐘是否已經開始運行。*/
     started : false,
+    /*代表番茄鐘的分鐘數。*/
     minutes : 0,
+    /*代表番茄鐘的秒數。*/
     seconds : 0,
+    /*表示計時器的填充效果的高度。*/
     fillerHeight : 0,
+    /*每秒填充效果增加的高度。*/
     fillerIncrement : 0,
+    /*計時器的間隔函式。*/
     interval : null,
+    /*指向顯示分鐘數的DOM元素的參考。*/
     minutesDom : null,
+    /*指向顯示秒數的DOM元素的參考。*/
     secondsDom : null,
+    /*指向計時器填充效果的DOM元素的參考。*/
     fillerDom : null,
+    /*初始化番茄鐘，設置DOM元素的參考，設置按鈕的點擊事件處理函式，並啟動計時器間隔函式。*/
     init : function(){
       var self = this;
       this.minutesDom = document.querySelector('#minutes');
@@ -102,6 +113,7 @@
         self.stopTimer.apply(self);
       };
     },
+    /*重置番茄鐘的變數，並設置番茄鐘的分鐘數、秒數、是否已開始等屬性。*/
     resetVariables : function(mins, secs, started){
       this.minutes = mins;
       this.seconds = secs;
@@ -109,6 +121,7 @@
       this.fillerIncrement = 200/(this.minutes*60);
       this.fillerHeight = 0;  
     },
+    /*開始工作時間、短休息時間、長休息時間，分別調用 resetVariables() 方法來設置對應的時間和狀態。*/
     startWork: function() {
       this.resetVariables(25, 0, true);
     },
@@ -118,22 +131,26 @@
     startLongBreak : function(){
       this.resetVariables(5, 0, true);
     },
+    /*停止計時器，將變數和狀態重置為預設值。*/
     stopTimer : function(){
       this.resetVariables(25, 0, false);
       this.updateDom();
     },
+    /*將數字轉換為兩位數的字符串形式，若數字小於10，則在前面添加0。*/
     toDoubleDigit : function(num){
       if(num < 10) {
         return "0" + parseInt(num, 10);
       }
       return num;
     },
+    /*更新DOM元素的顯示，包括分鐘數、秒數和計時器填充效果的高度。*/
     updateDom : function(){
       this.minutesDom.innerHTML = this.toDoubleDigit(this.minutes);
       this.secondsDom.innerHTML = this.toDoubleDigit(this.seconds);
       this.fillerHeight = this.fillerHeight + this.fillerIncrement;
       this.fillerDom.style.height = this.fillerHeight + 'px';
     },
+    /*計時器間隔函式的回調函式，每秒呼叫一次，根據秒數和分鐘數的變化更新番茄鐘的狀態和DOM顯示。*/
     intervalCallback : function(){
       if(!this.started) return false;
       if(this.seconds == 0) {
@@ -148,6 +165,7 @@
       }
       this.updateDom();
     },
+    /*計時器完成時的處理函式*/
     timerComplete : function(){
       this.started = false;
       this.fillerHeight = 0;
